@@ -12,6 +12,6 @@ export function errorHandlingMiddleware( error: ErrorMiddleware, req: Request, r
   if(error.code) {
     return res.status(error.code).send(error.message);
   }
-  return res.sendStatus(500);
+  return res.status(500).send('aaa');
 	
 }
