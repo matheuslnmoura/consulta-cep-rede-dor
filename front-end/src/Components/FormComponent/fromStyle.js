@@ -6,6 +6,7 @@ export const Form = styled.form`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 
   input {
     width: 100%;
@@ -26,6 +27,9 @@ export const Form = styled.form`
     border: 1px solid #000;
     cursor: pointer;
     transition: border-color .2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   button:hover {
