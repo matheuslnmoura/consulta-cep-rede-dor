@@ -8,7 +8,7 @@ const consultController = {
 export default consultController;
 
 async function consult(req: Request, res: Response) {
-  const {cep} = req.body;
+  const {cep} = res.locals.user;
   const response = await consultService.getCepInfo(cep);
   res.status(200).send(response);
 }

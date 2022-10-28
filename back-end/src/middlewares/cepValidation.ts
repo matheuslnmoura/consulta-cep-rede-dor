@@ -8,10 +8,11 @@ const cepValidation = {
 
 export default cepValidation;
 
-const cepPattern = /(?:^|\W)[0-9]{5}-?[0-9]{3}(?:$|\W)/;
+export const cepPattern = /(?:^|\W)[0-9]{5}-?[0-9]{3}(?:$|\W)/;
 
 function validateInput(req: Request, res: Response, next: NextFunction) {
-  const cep = req.body;
+  const treatedCep = req.body.cep.toString();
+  const cep = {cep: treatedCep};
   const cepSchema = Joi.object({
     cep: Joi.string().regex(cepPattern)
   });
@@ -22,5 +23,6 @@ function validateInput(req: Request, res: Response, next: NextFunction) {
     console.log(chalk.bold.red(error));
     throw{code: 400, message: 'O CEP informado é inválido.'};
   }
+  res.locals.user = cep;
   next();
 }
