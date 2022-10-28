@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IMaskInput } from 'react-imask';
+import InputMask from 'react-input-mask';
 import { useContext } from 'react';
 import { ThreeDots } from 'react-loader-spinner';
 
@@ -8,10 +8,10 @@ import cepApi from '../../services/cepApi';
 import CepInfoContext from '../../contexts/CepInfoContext';
 
 const Form = () => {
-  const {setCepInfo} = useContext(CepInfoContext);
+  const {CEP_PATTERN, cepValue, setCepValue, setCepInfo} = useContext(CepInfoContext);
   const [isNotLoading, setIsNotLoading] = useState(true);
 
-  const [cepValue, setCepValue] = useState('');
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -21,11 +21,10 @@ const Form = () => {
     setIsNotLoading(true);
   };
 
-  const CEP_PATTERN = '00000-000';
 
   return(
     <S.Form onSubmit={handleSubmit}>
-      <IMaskInput 
+      <InputMask 
         mask = {CEP_PATTERN}
         placeholder = 'Digite o cep'
         type = 'text' 

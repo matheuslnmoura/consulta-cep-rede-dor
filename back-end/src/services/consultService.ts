@@ -7,24 +7,29 @@ const consultService = {
 export default consultService;
 
 async function getCepInfo(cep: string) {
-  try {
-    const {data: response} = await axios({
-      method: 'get',
-      // url: `https://viacep.com.br/ws/${cep}/json/`,
-      url: `https://ws.apicep.com/cep.json?code=${cep}`,
-      timeout: 15000
-    });
-    if(response.status !== 200) {
-      throw {code: response.status, message: response.message};
-    }
-    return response;
-    
-  } catch (error) {
-    console.log('deu xabu');
-    console.log(error);
-    return error;
-    if(error.message.includes('timeout')) {
-      throw {code: 500, message: 'O servidor demorou para responder. Tente novamente.'};
-    }
+  // const API_URL = `https://ws.apicep.com/cep.json?code=${cep}`;
+  const API_URL = `https://viacep.com.br/ws/${cep}/json/`;
+  const {data: response} = await axios({
+    method: 'get',
+    url: API_URL,
+    timeout: 5000
+  });
+  if(API_URL.includes('viacep')) {
+    if(response.erro) {
+      console.log('entrou no if');
+      throw {code: 404, message: 'CEP não encontrado.'};
+    } 
+    return {
+      status: 200,
+      ok: true,
+      code: response.cep,
+      state: response.uf,
+      city: response.localidade,
+      district: response.bairro,
+      address: `${response.logradouro} - ${response.complemento}`,
+      statusText: 'ok',
+    };
   }
+  return response;
+  
 }

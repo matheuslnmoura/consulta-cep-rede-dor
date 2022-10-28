@@ -6,7 +6,10 @@ const wsApiCep = async(cep) => {
     return response.data;
     
   } catch (error) {
-    console.log(error);
+    return {
+      status: error.response.status,
+      message: error.response.data
+    };
   }
 };
 
