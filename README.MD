@@ -34,7 +34,7 @@ $ cd consulta-cep-rede-dor
 
 ```
 
-## Rodar o projeto com Docker
+## Rodando o projeto com Docker
 
 ```bash
 $ docker-compose up --build
