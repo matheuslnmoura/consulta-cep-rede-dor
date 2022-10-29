@@ -18,7 +18,7 @@ const App = () => {
   return (
     <CepInfoContext.Provider value={{CEP_PATTERN, cepValue, setCepValue, cepInfo, setCepInfo}}>
       <main className='app-wrapper'>
-        <h1>Bem vindo(a)!</h1>
+        <h1>Runner is up and running(hehehe) </h1>
         <Form />
         <CepInfo />
         <p>{cepInfo.message}</p>
