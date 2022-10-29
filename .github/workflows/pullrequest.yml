@@ -1,0 +1,11 @@
+name: Pull Request
+on: [pull_request]
+jobs: 
+  PullRequest: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Run tests
+        run: docker-compose run node_app_cep_consult npm run test:integration
+

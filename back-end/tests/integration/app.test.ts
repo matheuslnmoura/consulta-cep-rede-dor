@@ -63,4 +63,11 @@ describe('POST/consult-cep', () => {
     expect(response.status).toBe(200);
   });
 
+  it('Given an valid CEP that does not exist, should return code 404', async () => {
+    const cep = '43329090';
+    const response = await agent.post('/consult-cep').send({cep});
+
+    expect(response.status).toBe(404);
+  });
+
 });
