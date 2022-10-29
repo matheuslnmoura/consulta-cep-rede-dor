@@ -9,12 +9,7 @@ const App = () => {
   const CEP_PATTERN = '99999-999';
   const [cepValue, setCepValue] = useState('');
   const [cepInfo, setCepInfo] = useState({});
-  console.log(cepInfo);
-
-  if(cepInfo.code === 404 || cepInfo.code === 500) {
-    console.log('achou o code');
-  }
-
+  
   return (
     <CepInfoContext.Provider value={{CEP_PATTERN, cepValue, setCepValue, cepInfo, setCepInfo}}>
       <main className='app-wrapper'>
