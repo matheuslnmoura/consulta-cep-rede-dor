@@ -11,6 +11,14 @@
 ## Descrição
 
 Este é um projeto que busca informações de um endereço através do CEP.
+Tecnologias utilizadas: React, Node, Docker, Jest, Supertest. 
+
+Por se tratar de um projeto onde toda informação é coletada de uma API externa, não houve necessidade de utilizar banco de dados.
+
+API utilizada: https://viacep.com.br/ws/${cep}/json/
+onde ${cep} é o cep a ser consultado. 
+
+Deploy feito na AWS. 
 
 ## Link do Deploy
 
