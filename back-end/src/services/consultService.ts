@@ -16,7 +16,6 @@ async function getCepInfo(cep: string) {
   });
   if(API_URL.includes('viacep')) {
     if(response.erro) {
-      console.log('entrou no if');
       throw {code: 404, message: 'CEP não encontrado.'};
     } 
     return {
