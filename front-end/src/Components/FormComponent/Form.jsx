@@ -26,6 +26,7 @@ const Form = () => {
     <S.Form onSubmit={handleSubmit}>
       <InputMask 
         mask = {CEP_PATTERN}
+        maskChar ={ null }
         placeholder = 'Digite o cep'
         type = 'text' 
         name = 'cep' 
