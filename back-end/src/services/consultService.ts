@@ -19,6 +19,7 @@ async function getCepInfo(cep: string) {
       console.log('entrou no if');
       throw {code: 404, message: 'CEP não encontrado.'};
     } 
+    console.log('My purpose of existence is to check if pull request workflow is working');
     return {
       status: 200,
       ok: true,
