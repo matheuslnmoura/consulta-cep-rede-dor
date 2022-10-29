@@ -8,6 +8,8 @@
   </h3>
 </p>
 
+[![wakatime](https://wakatime.com/badge/user/931df320-b04c-4053-a4b2-f78c7375317a/project/8f433364-9bed-4c6e-bbe3-dce8638971f5.svg)](https://wakatime.com/badge/user/931df320-b04c-4053-a4b2-f78c7375317a/project/8f433364-9bed-4c6e-bbe3-dce8638971f5)
+
 ## Descrição
 
 Este é um projeto que busca informações de um endereço através do CEP.
