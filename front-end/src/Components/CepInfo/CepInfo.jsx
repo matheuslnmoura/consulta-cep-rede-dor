@@ -6,7 +6,7 @@ const CepInfo = () => {
   const {cepValue, cepInfo} = useContext(CepInfoContext);
   const {address, district, city, state, code } = cepInfo;
   return(
-    <S.UnorderedList display = {!address || code !== cepValue? 'none' : 'flex' }>
+    <S.UnorderedList opacity = {!address || code !== cepValue? 0 : 1 }  >
       <li>{address ? '' : 'Rua: '}{address}</li>
       <li>Bairro: {district}</li>
       <li>Cidade: {city}</li>

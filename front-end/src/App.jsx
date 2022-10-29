@@ -18,10 +18,13 @@ const App = () => {
   return (
     <CepInfoContext.Provider value={{CEP_PATTERN, cepValue, setCepValue, cepInfo, setCepInfo}}>
       <main className='app-wrapper'>
-        <h1>Runner is up and running 5(hehehe) </h1>
-        <Form />
-        <CepInfo />
-        <p>{cepInfo.message}</p>
+        <div className='content-wrapper'>
+          <h1>Rede D&apos;or</h1>
+          <h2>Busca CEP</h2>
+          <Form />
+          <p>{cepInfo.message}</p>
+          <CepInfo />
+        </div>
       </main>
     </CepInfoContext.Provider>
   );

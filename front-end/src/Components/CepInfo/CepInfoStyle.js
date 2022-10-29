@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const UnorderedList = styled.ul`
   margin-top: 25px;
-  display: ${props => props.display};
+  opacity: ${props => props.opacity};
   flex-direction: column;
   gap:10px;
+  transition: all ease .7s;
 `;
